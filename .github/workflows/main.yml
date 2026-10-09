@@ -2,16 +2,11 @@
 name: CI
 
 on:
-  pull_request:
-    types: [opened, reopened, synchronize, ready_for_review]
-  push:
-    branches: [main]
   workflow_dispatch:
-
 jobs:
   ci:
     name: CI
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     env:
       NODE_OPTIONS: --max-old-space-size=4096
       TURBO_CONCURRENCY: 1
